@@ -2,6 +2,7 @@
 
 namespace App\Mail;
 
+use App\Models\Branch;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Address;
@@ -11,7 +12,8 @@ use Illuminate\Mail\Mailables\Envelope;
 
 class FreezingMail extends Mailable
 {
-    use Queueable, SerializesModels;
+    use Queueable;
+    use SerializesModels;
 
     public $data;
     /**
@@ -27,9 +29,10 @@ class FreezingMail extends Mailable
      */
     public function envelope(): Envelope
     {
+        $branch = Branch::find($this->data->branch_id);
         return new Envelope(
-            from: new Address("noreply@tryoncall.com", $this->data->name),
-            subject: 'Membership Freezing ('.($this->data->branch_id == 1 ? 'Hessa Al Mubarak' : ($this->data->branch_id == 2 ? 'SABAH AL-SALEM' : 'MANGAF')).')',
+            from: new Address($branch->email, $branch->name),
+            subject: 'Membership Freezing (' . ($this->data->branch_id == 1 ? 'Hessa Al Mubarak' : ($this->data->branch_id == 2 ? 'SABAH AL-SALEM' : 'MANGAF')) . ')'
         );
     }
 
@@ -39,7 +42,7 @@ class FreezingMail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'freezing',
+            view: 'mails.freezing',
             with: [
                 'name' => $this->data->name,
                 'phone' => $this->data->phone,

@@ -1,6 +1,10 @@
 <?php
 
 use App\Http\Controllers\FormController;
+use App\Http\Controllers\Front\Branches\BranchesController;
+use App\Mail\FreezingMail;
+use App\Models\Form;
+use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,24 +18,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/test', function () {
-    return view('welcome');
-});
+Route::view('/', 'home');
 
-Route::get('/', function () {
-    return view('layout.app');
+Route::prefix('freez/form/{slug}')->controller(BranchesController::class)->group(function () {
+    Route::get('/', 'freez_form')->name('branch.freez_form');
 });
-
-Route::get('/sabahalsaelm', function () {
-    return view('sabah');
-});
-
-Route::get('/hessahalmubarak', function () {
-    return view('hessah');
-});
-
-Route::get('/mangaf', function () {
-    return view('mangaf');
-});
-
 Route::post('store', [FormController::class, 'store'])->name('form.store');

@@ -75,7 +75,7 @@
                         {{--  <!-- ***** Logo Start ***** -->  --}}
                         <a href="{{ url('/') }}" class="logo">
                             {{--  MP<em> health club</em>  --}}
-                            <img src="{{ asset('assets/images/misslogo.png') }}">
+                            <img src="{{ asset('assets/images/platinumLogo.png') }}">
                         </a>
                         {{--  ***** Logo End *****  --}}
                         {{--  ***** Menu Start *****  --}}
@@ -166,5 +166,6 @@
     @endif
     @yield('script')
 </body>
+
 
 </html>

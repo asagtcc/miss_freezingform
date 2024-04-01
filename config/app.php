@@ -1,6 +1,8 @@
 <?php
 
+use App\Models\Branch;
 use Illuminate\Support\Facades\Facade;
+use Illuminate\Support\Facades\Request;
 use Illuminate\Support\ServiceProvider;
 
 return [
@@ -182,7 +184,8 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
-        // 'Example' => App\Facades\Example::class,
+        'Branch' => Branch::class,
+        'Request' => Request::class,
     ])->toArray(),
 
 ];
