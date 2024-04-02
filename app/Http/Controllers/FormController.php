@@ -17,21 +17,29 @@ class FormController extends Controller
 
         $data['branch_id'] = $request->input('branchid');
 
-        $form = Form::create($data);
+        // return $data;
+        $form = Form::create([
+            'branch_id' => $data['branch_id'],
+            'name'      => $data['name'],
+            'phone'     => $data['phone'],
+            'email'     => $data['email'],
+            'date_from' => $data['date_from'],
+            'date_to'   => $data['date_to'],
+        ]);
 
         /*
             2 => hessah-almubarak@tryoncall.com
             3 => sabah-alsalem@tryoncall.com
             4 => mangaf-missplatinum@tryoncall.com
         */
-        if ($form)
-        {
-            $branch_email = Branch::where('id', $data['branch_id'])->pluck('email');
-            // freeze.miss@missplatinum.com
-            Mail::to($branch_email)->send(new FreezingMail($form));
 
-            return back()->with("success", "Data was submited successfully.");
-        }
+        // if ($form) {
+        //     $branch_email = Branch::where('id', $data['branch_id'])->pluck('email');
+        //     // freeze.miss@missplatinum.com
+        //     Mail::to($branch_email)->send(new FreezingMail($form));
+
+        return back()->with("success", "Data was submited successfully.");
+        // }
     }
 
 }

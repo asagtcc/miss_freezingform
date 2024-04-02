@@ -47,7 +47,7 @@
                         </div>
                         <div class="card_content">
                             <h4 class="card_title text-center py-2">
-                                {{ $branch->name }}
+                                {{ $branch->branch_name }}
                             </h4>
                         </div>
                         <div class="card_button d-flex">

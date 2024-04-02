@@ -11,6 +11,7 @@ class BranchesController extends Controller
     public function freez_form($slug)
     {
         $branch = Branch::where('slug', $slug)->firstOrFail();
+
         return view('branches.freez_form', compact('branch'));
     }
 }

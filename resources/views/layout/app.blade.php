@@ -80,12 +80,16 @@
                         {{--  ***** Logo End *****  --}}
                         {{--  ***** Menu Start *****  --}}
                         <ul class="nav">
-                            <li class="scroll-to-section"><a href="{{ url('/') }}"
-                                    class="{{ Request::path() == '/' ? 'active' : '' }}">Home</a></li>
+                            <li class="scroll-to-section">
+                                <a href="{{ url('/') }}" class="{{ Request::path() == '/' ? 'active' : '' }}">Home</a>
+                            </li>
                             @foreach (Branch::get() as $branch)
-                                <li class="scroll-to-section"><a href="{{ route('branch.freez_form', $branch->slug) }}"
+                                <li class="scroll-to-section">
+                                    <a href="{{ route('branch.freez_form', $branch->slug) }}"
                                         class="{{ str_contains(Request::url(), $branch->slug) ? 'active' : '' }}">
-                                        {{ $branch->name }} </a></li>
+                                        {{ $branch->branch_name }} 
+                                    </a>
+                                </li>
                             @endforeach
                         </ul>
                         <a class='menu-trigger'>
@@ -106,8 +110,8 @@
                     <img src="{{ asset('assets/images/logo.jpg') }}">
                 </div>  --}}
             <div class="caption">
-                <h6>work harder, get stronger</h6>
-                <h2>easy with our <em>gym</em></h2>
+                <h2><em>Live your legacy</em></h2>
+                <h6>freezing page</h6>
             </div>
         </div>
     </div>
