@@ -9,6 +9,7 @@ use Illuminate\Mail\Mailables\Address;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Mail\Mailables\Envelope;
+use Illuminate\Mail\Mailables\Attachment;
 
 class FreezingMail extends Mailable
 {
@@ -16,6 +17,7 @@ class FreezingMail extends Mailable
     use SerializesModels;
 
     public $data;
+
     /**
      * Create a new message instance.
      */
@@ -30,9 +32,11 @@ class FreezingMail extends Mailable
     public function envelope(): Envelope
     {
         $branch = Branch::find($this->data->branch_id);
+
         return new Envelope(
-            from: new Address($branch->email, $branch->name),
-            subject: 'Membership Freezing (' . ($this->data->branch_id == 1 ? 'Hessa Al Mubarak' : ($this->data->branch_id == 2 ? 'SABAH AL-SALEM' : 'MANGAF')) . ')'
+            from: new Address('noreply@tryoncall.com', $this->data->name),
+            subject: 'Membership Freezing (' . $branch->branch_name . ')'
+            // subject: 'Membership Freezing'
         );
     }
 
@@ -49,7 +53,8 @@ class FreezingMail extends Mailable
                 'email' => $this->data->email,
                 'start_date' => $this->data->date_from,
                 'end_date' => $this->data->date_to,
-            ],
+                'message' => $this,
+            ]
         );
     }
 
@@ -60,6 +65,9 @@ class FreezingMail extends Mailable
      */
     public function attachments(): array
     {
-        return [];
+        return [
+            // Attachment::fromPath(asset('assets/images/dark-logo.png')),
+            // Attachment::fromPath(asset('assets/images/logoicon.png')),
+        ];
     }
 }
