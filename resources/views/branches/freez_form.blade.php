@@ -19,7 +19,7 @@
                     <form id="contact" action="{{ route('form.store') }}" method="post" autocomplete="off"
                         onsubmit="return validate();">
                         @csrf
-                        <input type="hidden" name="branchid" value="{{ $branch->id}}">
+                        <input type="hidden" name="branchid" value="{{ $branch->id }}">
                         <div class="row">
                             <div class="col-md-12">
                                 <fieldset style="">
@@ -133,7 +133,7 @@
                     // Calculate the first available date
                     var firstAvailableDate = new Date(startDate);
                     firstAvailableDate.setDate(firstAvailableDate.getDate() +
-                    6); // Assuming this is the first available date
+                        6); // Assuming this is the first available date
 
                     // Set the value of the date_to input to the first available date
                     var formattedFirstAvailableDate = $.datepicker.formatDate("yy-mm-dd", firstAvailableDate);
