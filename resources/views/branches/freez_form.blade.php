@@ -19,11 +19,7 @@
                     <form id="contact" action="{{ route('form.store') }}" method="post" autocomplete="off"
                         onsubmit="return validate();">
                         @csrf
-<<<<<<< HEAD
-                        <input type="hidden" name="branchid" value="{{ $branch?->id }}">
-=======
-                        <input type="hidden" name="branchid" value="{{ $branch->id}}">
->>>>>>> 232b509f0d2808703c951c3204e720e0c27b689e
+                        <input type="hidden" name="branchid" value="{{ $branch->id }}">
                         <div class="row">
                             <div class="col-md-12">
                                 <fieldset style="">
