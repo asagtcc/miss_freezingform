@@ -901,6 +901,27 @@ responsive
         font-size:13px;
     }
 
+    .main-banner {
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 60vh;
+        max-height: 60vh;
+        object-fit: cover;
+    }
+    .video-overlay {
+        position: absolute;
+        background-color: rgba(35,45,57,0.8);
+        top: 0;
+        left: 0;
+        bottom: 225px;
+        width: 100%;
+    }
+
+    #contact-us {
+        margin-top: 0px;
+    }
+
 }
 
 /* for dates */
