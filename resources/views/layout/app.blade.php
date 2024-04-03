@@ -102,12 +102,9 @@
     {{-- ***** Main Banner Area Start ***** --}}
     <div class="main-banner" id="top">
         <div class="video-overlay header-text">
-            {{--  <div class="logo">
-                    <img src="{{ asset('assets/images/logo.jpg') }}">
-                </div>  --}}
             <div class="caption">
-                <h6>work harder, get stronger</h6>
-                <h2>easy with our <em>gym</em></h2>
+                <h2><em>LIVE YOUR LEGACY</em></h2>
+                <h6>Freezing Page</h6>
             </div>
         </div>
     </div>
