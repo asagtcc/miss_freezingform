@@ -80,12 +80,16 @@
                         {{--  ***** Logo End *****  --}}
                         {{--  ***** Menu Start *****  --}}
                         <ul class="nav">
-                            <li class="scroll-to-section"><a href="{{ url('/') }}"
-                                    class="{{ Request::path() == '/' ? 'active' : '' }}">Home</a></li>
+                            <li class="scroll-to-section">
+                                <a href="{{ url('/') }}" class="{{ Request::path() == '/' ? 'active' : '' }}">Home</a>
+                            </li>
                             @foreach (Branch::get() as $branch)
-                                <li class="scroll-to-section"><a href="{{ route('branch.freez_form', $branch->slug) }}"
+                                <li class="scroll-to-section">
+                                    <a href="{{ route('branch.freez_form', $branch->slug) }}"
                                         class="{{ str_contains(Request::url(), $branch->slug) ? 'active' : '' }}">
-                                        {{ $branch->name }} </a></li>
+                                        {{ $branch->branch_name }} 
+                                    </a>
+                                </li>
                             @endforeach
                         </ul>
                         <a class='menu-trigger'>
@@ -103,8 +107,13 @@
     <div class="main-banner" id="top">
         <div class="video-overlay header-text">
             <div class="caption">
+<<<<<<< HEAD
                 <h2><em>LIVE YOUR LEGACY</em></h2>
                 <h6>Freezing Page</h6>
+=======
+                <h2><em>Live your legacy</em></h2>
+                <h6>freezing page</h6>
+>>>>>>> 232b509f0d2808703c951c3204e720e0c27b689e
             </div>
         </div>
     </div>

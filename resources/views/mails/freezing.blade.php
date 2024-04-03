@@ -140,15 +140,6 @@
             max-width: 440px;
         }
 
-
-
-
-
-
-
-
-
-
         body {
             font-family: 'Montserrat', sans-serif;
             color: #8A959E;
@@ -221,13 +212,12 @@
             -webkit-box-shadow: 0px 20px 40px -10px rgba(0, 0, 0, 0.15) !important;
         }
 
-
         img+div {
             display: none;
         }
 
         .info_content {
-            direction: rtl;
+            direction: ltr;
             padding: 10px;
         }
 
@@ -322,15 +312,13 @@
         <tbody>
             <tr>
                 <td align="center" valign="top">
-
-                    <!-- START LIQUID WRAPPER -->
+                                        <!-- START LIQUID WRAPPER -->
                     <!--[if mso]>
         <table cellpadding="0" cellspacing="0" border="0" style="padding:0px;margin:0px;width:100%;">
             <tr>
                 <td style="padding:0px;margin:0px;">&nbsp;</td>
                 <td style="padding:0px;margin:0px;" width="640">
         <![endif]-->
-
                     <table class="outer-table" summary="outer-table" align="center" valign="top" border="0"
                         cellpadding="0" cellspacing="0" style="width:100%; max-width:640px; Margin:0 auto"
                         width="100%">
@@ -364,7 +352,7 @@
                                                                             <tr>
 
                                                                                 <td width="70">
-                                                                                    <img src="{{ asset('assets/images/logoicon.png') }}"
+                                                                                    <img src="{{ $message->embed(public_path() . '/assets/images/logoicon.png') }}"
                                                                                         width="50.0" height="47.0"
                                                                                         alt="InVision App"
                                                                                         style="border:0;">
@@ -373,7 +361,7 @@
 
                                                                                 <td class="responsive-header-cell-big"
                                                                                     style="font-family:'Open Sans', arial, sans-serif !important;font-size:25px;line-height:30px !important;font-weight:200 !important;color:#252b33 !important;">
-                                                                                    Freeze An Account
+                                                                                    Freezing a membership
                                                                                 </td>
 
 
@@ -387,10 +375,6 @@
                                                                     </table>
                                                                 </td>
                                                             </tr>
-
-
-
-
                                                             <tr height="40">
                                                                 <td>&nbsp;</td>
                                                             </tr>
@@ -403,11 +387,10 @@
                                                                         <tbody>
                                                                             <tr>
                                                                                 <td style="padding: 20px 50px;">
-                                                                                    <img src="{{ asset('assets/images/dark-logo.png') }}"
+                                                                                    <img src="{{ $message->embed(public_path() . '/assets/images/dark-logo.png') }}"
                                                                                         class="hero-image"
                                                                                         width="580"
                                                                                         style="border: 0; max-width: 100% !important;"
-                                                                                        srcset="{{ asset('assets/images/dark-logo.png') }}"
                                                                                         sizes="(max-width: 580px) 100vw, 580px" />
                                                                                 </td>
                                                                             </tr>
@@ -423,7 +406,7 @@
                                                                                                 <td align="center">
                                                                                                     <h2
                                                                                                         style="margin: 0 !important; font-family:'Archivo', sans-serif !important;font-size:28px !important;line-height:38px !important;font-weight:200 !important;color:#252b33 !important;">
-                                                                                                        User Info
+                                                                                                        Member Info
                                                                                                     </h2>
                                                                                                 </td>
                                                                                             </tr>
@@ -435,8 +418,6 @@
                                                                             <tr height="25">
                                                                                 <td>&nbsp;</td>
                                                                             </tr>
-
-
                                                                             <tr>
                                                                                 <td align="center">
                                                                                     <table class="story-4"
@@ -445,57 +426,41 @@
                                                                                         width="78%">
                                                                                         <tbody>
                                                                                             <tr>
-                                                                                                <td
-                                                                                                    class="info_content">
-                                                                                                    <span
-                                                                                                        class="title_info">
-                                                                                                        Name / الإسم:
+                                                                                                <td class="info_content">
+                                                                                                    <span class="title_info" style="color: #95a94f">
+                                                                                                        Name / الاسم:
                                                                                                     </span>
-                                                                                                    <span
-                                                                                                        class="info_val">
+                                                                                                    <span class="info_val">
                                                                                                         {{ $name }}
                                                                                                     </span>
                                                                                                 </td>
                                                                                             </tr>
                                                                                             <tr>
-                                                                                                <td
-                                                                                                    class="info_content">
-                                                                                                    <span
-                                                                                                        class="title_info">
-                                                                                                        Telephone /
-                                                                                                        التلفون:
+                                                                                                <td class="info_content">
+                                                                                                    <span class="title_info" style="color: #95a94f">
+                                                                                                        Telephone / التليفون:
                                                                                                     </span>
-                                                                                                    <span
-                                                                                                        class="info_val">
+                                                                                                    <span class="info_val">
                                                                                                         {{ $phone }}
                                                                                                     </span>
                                                                                                 </td>
                                                                                             </tr>
                                                                                             <tr>
-                                                                                                <td
-                                                                                                    class="info_content">
-                                                                                                    <span
-                                                                                                        class="title_info">
+                                                                                                <td class="info_content">
+                                                                                                    <span class="title_info" style="color: #95a94f">
                                                                                                         Email / الإيميل:
                                                                                                     </span>
-                                                                                                    <span
-                                                                                                        class="info_val">
+                                                                                                    <span class="info_val">
                                                                                                         {{ $email }}
                                                                                                     </span>
                                                                                                 </td>
                                                                                             </tr>
                                                                                             <tr>
-                                                                                                <td
-                                                                                                    class="info_content">
-                                                                                                    <span
-                                                                                                        class="title_info">
-                                                                                                        Freezing
-                                                                                                        Starting Date /
-                                                                                                        تاريخ بداية
-                                                                                                        الإيقاف:
+                                                                                                <td class="info_content">
+                                                                                                    <span class="title_info" style="color: #95a94f">
+                                                                                                        Freezing Start Date / تاريخ بداية الإيقاف:
                                                                                                     </span>
-                                                                                                    <span
-                                                                                                        class="info_val">
+                                                                                                    <span class="info_val">
                                                                                                         {{ $start_date }}
                                                                                                     </span>
                                                                                                 </td>
@@ -504,13 +469,10 @@
                                                                                                 <td
                                                                                                     class="info_content">
                                                                                                     <span
-                                                                                                        class="title_info">
-                                                                                                        Freezing End
-                                                                                                        Date / تاريخ
-                                                                                                        نهاية الإيقاف:
+                                                                                                        class="title_info" style="color: #95a94f">
+                                                                                                        Freezing End Date / تاريخ نهاية الإيقاف:
                                                                                                     </span>
-                                                                                                    <span
-                                                                                                        class="info_val">
+                                                                                                    <span class="info_val">
                                                                                                         {{ $end_date }}
                                                                                                     </span>
                                                                                                 </td>

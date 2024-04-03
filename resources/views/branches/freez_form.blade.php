@@ -1,13 +1,13 @@
 @extends('layout.app')
 @section('title')
-    {{ $branch->name }} | Membership Freezing
+    {{ $branch->branch_name }} | Membership Freezing
 @endsection
 @section('content')
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-6 offset-lg-3">
                 <div class="section-heading">
-                    <h2>MEMBERSHIP FREEZING <em>({{ $branch->name }})</em></h2>
+                    <h2>MEMBERSHIP FREEZING <em>({{ $branch->branch_name }})</em></h2>
                     <p>ملاحظة
                         أقل مدة لإيقاف الإشتراك هى سبعة أيام
                         Minimum freezing period is 7 days
@@ -19,7 +19,11 @@
                     <form id="contact" action="{{ route('form.store') }}" method="post" autocomplete="off"
                         onsubmit="return validate();">
                         @csrf
+<<<<<<< HEAD
                         <input type="hidden" name="branchid" value="{{ $branch?->id }}">
+=======
+                        <input type="hidden" name="branchid" value="{{ $branch->id}}">
+>>>>>>> 232b509f0d2808703c951c3204e720e0c27b689e
                         <div class="row">
                             <div class="col-md-12">
                                 <fieldset style="">
